@@ -1,0 +1,25 @@
+[project]
+name = "lecture-2"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Danila277", email = "125901237+Danilakov277@users.noreply.github.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pytest>=9.0.1,<10.0.0"
+]
+
+[tool.poetry]
+packages = [{include = "main", from = ""}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
