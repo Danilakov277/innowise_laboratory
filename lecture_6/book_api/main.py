@@ -42,3 +42,8 @@ def update_book(book_id: int, book: schemas.BookUpdate, db: Session = Depends(ge
 @app.get("/books/search/", response_model=list[schemas.Book])
 def search_books(query: str, db: Session = Depends(get_db)):
     return crud.search_books(db, query)
+
+# Healthcheck endpoint
+@app.get("/healthcheck")
+async def healthcheck() -> dict:
+    return {"status": "ok"}
